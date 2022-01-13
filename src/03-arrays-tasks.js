@@ -190,7 +190,7 @@ function getTail(arr, n) {
  *
  * @example
  *    [
- *       [  0, 1, 2, 3, 4 ],
+ *       [ 0, 1, 2, 3, 4 ],
  *       [ 10,11,12,13,14 ],
  *       [ 20,21,22,23,24 ],
  *       [ 30,31,32,33,34 ]
@@ -201,9 +201,10 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  return arr.map((element) => element.join(',')).join('\n');
 }
+
 
 /**
  * Transforms the numeric array into the according array of squares:

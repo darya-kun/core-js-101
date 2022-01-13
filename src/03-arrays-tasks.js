@@ -35,8 +35,9 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  // Использование стрелочной функции и Array.from() https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+  return Array.from({ length: len }, (element, index) => index * 2 + 1);
 }
 
 

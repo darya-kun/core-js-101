@@ -161,8 +161,9 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  // by Pythagorean Theorem the diagonal of a rectangular parallelepiped is a length or a distance between the opposite vertices (http://www.math-principles.com/2014/06/rectangular-parallelepiped-problem-11.html)
+  return (Math.sqrt((a * a) + (b * b) + (c * c)));
 }
 
 

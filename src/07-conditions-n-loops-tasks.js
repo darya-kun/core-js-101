@@ -37,6 +37,7 @@ function getFizzBuzz(num) {
 
 /**
  * Returns the factorial of the specified integer n.
+ * (https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/)
  *
  * @param {number} n
  * @return {number}
@@ -46,8 +47,13 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  // A factorial is the product of all positive integers less than or equal to n.
+  // 5! = 1 * 2 * 3 * 4 * 5 = 120
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * getFactorial(n - 1);
 }
 
 

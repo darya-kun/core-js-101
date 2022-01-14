@@ -45,6 +45,7 @@ function willYouMarryMe(isPositiveAnswer) {
 /**
  * Return Promise object that should be resolved with array containing plain values.
  * Function receive an array of Promise objects.
+ * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
  *
  * @param {Promise[]} array
  * @return {Promise}
@@ -57,8 +58,8 @@ function willYouMarryMe(isPositiveAnswer) {
  *    })
  *
  */
-function processAllPromises(/* array */) {
-  throw new Error('Not implemented');
+function processAllPromises(array) {
+  return Promise.all(array);
 }
 
 /**

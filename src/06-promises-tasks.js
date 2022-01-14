@@ -45,7 +45,7 @@ function willYouMarryMe(isPositiveAnswer) {
 /**
  * Return Promise object that should be resolved with array containing plain values.
  * Function receive an array of Promise objects.
- * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+ * (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
  *
  * @param {Promise[]} array
  * @return {Promise}
@@ -66,6 +66,7 @@ function processAllPromises(array) {
  * Return Promise object that should be resolved with value received from
  * Promise object that will be resolved first.
  * Function receive an array of Promise objects.
+ * (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)
  *
  * @param {Promise[]} array
  * @return {Promise}
@@ -81,14 +82,15 @@ function processAllPromises(array) {
  *    })
  *
  */
-function getFastestPromise(/* array */) {
-  throw new Error('Not implemented');
+function getFastestPromise(array) {
+  return Promise.race(array);
 }
 
 /**
  * Return Promise object that should be resolved with value that is
  * a result of action with values of all the promises that exists in array.
  * If some of promise is rejected you should catch it and process the next one.
+ * (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)
  *
  * @param {Promise[]} array
  * @param {Function} action
@@ -102,8 +104,14 @@ function getFastestPromise(/* array */) {
  *    });
  *
  */
-function chainPromises(/* array, action */) {
-  throw new Error('Not implemented');
+function chainPromises(array, action) {
+  return new Promise((resolve) => {
+    const arrayOfActionResults = [];
+    array.forEach((promise) => {
+      promise.then((result) => arrayOfActionResults.push(result)).catch(() => new Error('Error'));
+    });
+    resolve(arrayOfActionResults);
+  }).then((result) => result.reduce(action));
 }
 
 module.exports = {

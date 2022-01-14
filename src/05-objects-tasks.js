@@ -29,6 +29,7 @@ function Rectangle(width, height) {
 
 /**
  * Returns the JSON representation of specified object
+ * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
  *
  * @param {object} obj
  * @return {string}
@@ -37,8 +38,8 @@ function Rectangle(width, height) {
  *    [1,2,3]   =>  '[1,2,3]'
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
-function getJSON(/*  */) {
-  throw new Error('Not implemented');
+function getJSON(obj) {
+  return JSON.stringify(obj);
 }
 
 

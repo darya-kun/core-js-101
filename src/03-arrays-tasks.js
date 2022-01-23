@@ -398,6 +398,7 @@ function toStringList(arr) {
 /**
  * Sorts the specified array by country name first and city name
  * (if countries are equal) in ascending order.
+ * (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
  *
  * @param {array} arr
  * @return {array}
@@ -421,9 +422,15 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  return arr.sort((firstEl, secondEl) => {
+    if (firstEl.country === secondEl.country) {
+      return firstEl.city.localeCompare(secondEl.city);
+    }
+    return firstEl.country.localeCompare(secondEl.country);
+  });
 }
+
 
 /**
  * Creates an identity matrix of the specified size

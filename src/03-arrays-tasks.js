@@ -340,9 +340,10 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-  throw new Error('Not implemented');
+function getItemsSum(arr) {
+  return arr.reduce((prevValue, curValue) => prevValue + curValue, 0);
 }
+
 
 /**
  * Returns the number of all falsy value in the specified array

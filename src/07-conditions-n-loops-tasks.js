@@ -213,6 +213,7 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
 
 /**
  * Reverse the specified string (put all chars in reverse order)
+ * (https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/)
  *
  * @param {string} str
  * @return {string}
@@ -224,7 +225,11 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-  return str.split('').reverse().join('');
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    newStr += str[i];
+  }
+  return newStr;
 }
 
 

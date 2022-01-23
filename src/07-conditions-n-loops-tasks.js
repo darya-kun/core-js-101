@@ -246,7 +246,12 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-  return +num.toString().split('').reverse().join('');
+  const strNum = num.toString();
+  let newNum = '';
+  for (let i = strNum.length - 1; i >= 0; i -= 1) {
+    newNum += strNum[i];
+  }
+  return +newNum;
 }
 
 

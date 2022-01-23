@@ -475,6 +475,7 @@ function getIntervalArray(start, end) {
 
 /**
  * Returns array containing only unique values from the specified array.
+ * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set)
  *
  * @param {array} arr
  * @return {array}
@@ -484,9 +485,10 @@ function getIntervalArray(start, end) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return [...new Set(arr)];
 }
+
 
 /**
  * Groups elements of the specified array by key.
